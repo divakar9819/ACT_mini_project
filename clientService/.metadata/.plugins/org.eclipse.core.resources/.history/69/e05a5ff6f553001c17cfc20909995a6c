@@ -1,0 +1,39 @@
+package com.transaction.TransactionManagementApp.entities;
+
+import java.util.HashSet;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+@Entity
+@Table(name="client")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+public class Client {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int clientId;
+	private String clientUserName;
+	private String clientPassword;
+	private int walletBalance;
+	private String clientState;
+	private String phoneNumber;
+	
+
+}
